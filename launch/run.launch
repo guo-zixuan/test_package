@@ -1,0 +1,8 @@
+<launch>
+    <!--- Sim Time -->
+    <param name="/use_sim_time" value="true" />
+
+    <node pkg="rviz" type="rviz" name="rviz_1" args="-d $(find my_test_package)/rviz/path_contrast.rviz" />
+
+    <node pkg= "my_test_package" type="path_contrast_node" name ="path_contrast_node" output="screen"/>
+</launch>
