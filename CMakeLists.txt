@@ -159,6 +159,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/my_test_package_node.cpp)
 add_executable(path_contrast_node src/odom2path.cpp)
+add_executable(time_contrast_node src/timeContrast.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -175,6 +176,10 @@ add_executable(path_contrast_node src/odom2path.cpp)
 #   ${catkin_LIBRARIES}
 # )
 target_link_libraries(path_contrast_node
+  ${catkin_LIBRARIES}
+)
+
+target_link_libraries(time_contrast_node
   ${catkin_LIBRARIES}
 )
 

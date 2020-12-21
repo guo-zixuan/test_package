@@ -81,6 +81,10 @@ my_test_package::XYZRPY imu2XYZRPY(const sensor_msgs::Imu & msg){
     tf::quaternionMsgToTF(msg.orientation,q);
     tf::Matrix3x3(q).getRPY(tmp.roll,tmp.pitch,tmp.yaw); 
 
+    tmp.roll = tmp.roll*180/M_PI;
+    tmp.pitch = tmp.pitch*180/M_PI;
+    tmp.yaw = tmp.yaw*180/M_PI;
+
     return tmp;
 
 }
