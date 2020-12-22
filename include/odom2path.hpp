@@ -34,8 +34,6 @@ double odomSD(const nav_msgs::Odometry& last_msg,const nav_msgs::Odometry& now_m
     return sq;
 }
 
-
-
 double yawdif(const nav_msgs::Odometry& last_msg,const nav_msgs::Odometry& now_msg){
 
     double lastYaw = tf::getYaw(last_msg.pose.pose.orientation);
@@ -89,11 +87,12 @@ my_test_package::XYZRPY imu2XYZRPY(const sensor_msgs::Imu & msg){
 
 }
 
-void publishMy6D(const nav_msgs::Odometry& msg,ros::Publisher pub){
+my_test_package::XYZRPY publishMy6D(const nav_msgs::Odometry& msg,ros::Publisher pub){
     
     my_test_package::XYZRPY tmp = odom2XYZRPY(msg);
     pub.publish(tmp);
 
+    return tmp;
 }
 
 void publishMy6D(const Eigen::Quaterniond& msg,ros::Publisher pub){

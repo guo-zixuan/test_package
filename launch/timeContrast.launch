@@ -3,6 +3,6 @@
     <param name="/use_sim_time" value="true" />
 
     <node pkg= "my_test_package" type="time_contrast_node" name ="time_contrast_node" output="screen">
-        <param name= "odomTopic" value = "/robot1/odom" />
+        <param name= "odomTopic" value = "/odometry" />
     </node>
 </launch>

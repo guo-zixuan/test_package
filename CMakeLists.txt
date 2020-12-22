@@ -19,6 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   message_generation
   cmake_modules
+  roslib
 )
 
 find_package(Eigen REQUIRED)

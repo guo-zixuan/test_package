@@ -28,3 +28,23 @@ roslaunch my_test_package timeContrast.launch
 ```
 
 注:如果在现实使用,注意修改是否使用仿真时间
+
+### 新增导出txt功能(odom2path.cpp)
+
+python中使用的是绝对路径
+
+数据包播放完成后，可以通过以下指令来进行txt文件导出
+
+```bash
+rostopic pub /txt_flag std_msgs/Empty "{}"
+```
+
+### 绘图功能（draw.py）
+
+须给draw.py增加可执行权限
+
+```bash
+chmod +x draw.py
+```
+
+我绘制出的图像在`image/折线图/`中
